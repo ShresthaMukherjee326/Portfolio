@@ -1,0 +1,323 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+}
+
+body {
+  overflow-x: hidden;
+  color: white;
+}
+
+/* ****************LAND PAGE**************** */
+/* ****************LAND PAGE**************** */
+.main-width {
+  width: 1280px;
+  max-width: 95%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(background-s.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+header {
+  padding: 40px 0 30px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo i {
+  height: 55px;
+  width: 55px;
+  background: transparent;
+  border: 2px solid #2ecc71;
+  color: #2ecc71;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+nav .hamb {
+  width: 35px;
+  height: 24px;
+  right: 3%;
+  top: 60px;
+  z-index: 5;
+  background: transparent;
+  position: absolute;
+  cursor: pointer;
+  display: none;
+}
+
+nav .hamb span {
+  display: block;
+  background: #2ecc71;
+  width: 100%;
+  height: 3px;
+  transition: .3s;
+  transition-property: transform, opacity;
+}
+
+nav .hamb span:nth-child(2) {
+  margin: 7px 0px;
+}
+
+nav .nav-list {
+  list-style: none;
+}
+
+nav .nav-list li {
+  display: inline-block;
+}
+
+nav .nav-list li a {
+  display: inline-block;
+  color: #eee;
+  margin-left: 55px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+nav .nav-list li:not(:last-child) a:hover {
+  color: #2ecc71;
+  transition: .4s;
+}
+
+nav .nav-list li.btn a {
+  display: inline-block;
+  background: transparent;
+  border: 2px solid #2ecc71;
+  padding: 9px 28px;
+  border-radius: 30px;
+  line-height: 1.3;
+  color: #2ecc71;
+  font-weight: 500;
+}
+
+nav .nav-list li.btn:hover a {
+  background: #2ecc71;
+  color: white;
+  border: 2px solid transparent;
+  transition: .6s;
+}
+
+
+/* ***************CONTACT********** */
+//contact form
+.contact-form{
+    margin-top: 30px;
+    .input-block{
+        color: transparent;
+        border: solid 1px $primary-color;
+        width: 100%;
+        height: 60px;
+        padding: 25px;
+        position: relative;
+        margin-bottom: 20px;
+        @include transition(all 0.3s ease-out);
+        &.focus{
+            background-color: $form-bg;
+            border: solid 1px darken($primary-color, 10%);
+        }
+        &.textarea{
+            height: auto;
+            .form-control{
+                height: auto;
+                resize: none;
+            }
+        }
+        label{
+            position: absolute;
+            left: 25px;
+            top: 25px;
+            display: block;
+            margin:0;
+            font-weight: 300;
+            z-index: 1;
+            color: white;
+            font-size: 18px;
+            line-height: 10px;
+        }
+        .form-control{
+            background-color: transparent;
+            padding: 0;
+            border: none;
+            @include border-radius(0);
+            @include box-shadow(none);
+            height: auto;
+            position: relative;
+            z-index: 2;
+            font-size: 18px;
+            color: white;
+        }
+        .form-control:focus{
+            label{
+                top: 0;
+            }
+        }
+    }
+    .square-button{
+        background-color: rgba(white, .8);
+        color: darken($primary-color, 10%);
+        font-size: 26px;
+        text-transform: uppercase;
+        font-weight: 700;
+        text-align: center;
+        @include border-radius(2px);
+        @include transition(all 0.3s ease);
+        padding: 0 60px;
+        height: 60px;
+        border: none;
+        width: 100%;
+        &:hover,
+        &:focus{
+            background-color: white;
+        }
+    }
+}
+
+//tablet and above devices
+@media (min-width: 768px) {
+  .contact-wrap{
+    width: 60%;
+    margin: auto;
+  }
+}
+
+.contact-wrap{
+  padding: 15px;
+}
+
+h1{
+  background-color: transparent;
+  color: white;
+  padding: 20px 30px;
+  margin: 0 0 10px;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align:left;
+
+}
+@media screen and (max-width:930px) {
+  nav .hamb {
+    display: initial;
+  }
+  .click {
+    top: 46px;
+  }
+
+  .click span {
+    position: absolute;
+    margin-top: 12px;
+  }
+
+  .click span:first-child {
+    transform: rotate(-40deg);
+  }
+
+  .click span:nth-child(2) {
+    opacity: 0;
+    margin: 0;
+  }
+
+  .click span:last-child {
+    transform: rotate(40deg);
+    top: 0;
+  }
+
+  nav .nav-list {
+    position: absolute;
+    top: 90px;
+    right: -65%;
+    bottom: 0;
+    width: 60%;
+    height: 50%;
+    background: black;
+    z-index: 2;
+    padding: 6% 9%;
+    transition: .3s right;
+    border-radius: 10px;
+  }
+
+  nav .nav-list li {
+    display: block;
+  }
+
+  nav .nav-list li a {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 0;
+    margin-bottom: 40px;
+  }
+
+  nav .nav-list li.btn a {
+    position: absolute;
+    bottom: 0;
+    right: 20%;
+    left: 20%;
+    padding: 7px 15px;
+    font-size: 14px;
+  }
+
+  nav .nav-list.open {
+    right: 0;
+  }
+
+  .hero {
+    width: 125%;
+    height: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url(background-s.png);
+    background-size: cover;
+    background-position: right;
+    position: relative;
+  }
+
+  .contact-form{
+    width: 280px;
+  }
+  body{
+    height: 700px;
+    width: 300px;
+  }
+}
+@media screen and (max-width: 930px) {
+  nav .nav-list {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    width: 60%;
+    height: 100vh;
+    background: black;
+    z-index: 2;
+    padding: 6% 9%;
+    transition: .3s right;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+  }
+  
+  /* When the nav-list is open, move it to the visible area */
+  nav .nav-list.open {
+    right: 0;
+  }
+  
+}
